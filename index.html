@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+<link rel="preconnect" href="https://api.counterapi.dev">
+<link rel="dns-prefetch" href="https://api.counterapi.dev">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0b0f">
+<meta name="description" content="Free JSON formatter and validator — beautify, minify, validate, and explore JSON. Syntax highlighting, tree view, error detection. No signup, 100% in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jimmywithfiona.com/json-formatter/">
+<meta name="keywords" content="json formatter, json validator, json beautifier, json minifier, json parser, format json, pretty print json">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JSON Formatter">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="JSON Formatter & Validator — Free Online | Beautify, Minify, Validate">
+<meta property="og:description" content="Free JSON formatter — beautify, minify, validate, and explore JSON with syntax highlighting and tree view. No signup, 100% in browser.">
+<meta property="og:url" content="https://jimmywithfiona.com/json-formatter/">
+<meta property="og:image" content="https://jimmywithfiona.com/json-formatter/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JSON Formatter & Validator — Free Online">
+<meta name="twitter:description" content="Beautify, minify, validate, and explore JSON. Free, no signup.">
+<meta name="twitter:image" content="https://jimmywithfiona.com/json-formatter/og.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1840337371416691" crossorigin="anonymous"></script>
+<title>JSON Formatter & Validator — Free Online | Beautify, Minify, Validate</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Formatter","url":"https://jimmywithfiona.com/json-formatter/","description":"Free JSON formatter and validator. Beautify, minify, validate, and explore JSON with syntax highlighting and tree view.","applicationCategory":"DeveloperApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JSON formatting?","acceptedAnswer":{"@type":"Answer","text":"JSON formatting (beautification) adds proper indentation and line breaks to compact JSON, making it easier to read and debug. Minification does the opposite — removes whitespace to reduce file size."}},{"@type":"Question","name":"Is this JSON formatter free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. No signup, no limits. All processing happens in your browser."}},{"@type":"Question","name":"Can it validate JSON?","acceptedAnswer":{"@type":"Answer","text":"Yes, the tool validates your JSON in real-time and shows exact error locations with line and column numbers."}},{"@type":"Question","name":"Does it handle large JSON files?","acceptedAnswer":{"@type":"Answer","text":"Yes, it can handle JSON files up to several megabytes. Processing happens locally in your browser."}},{"@type":"Question","name":"Is my data private?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% private. All parsing and formatting happens in your browser. No data is sent to any server."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jimmywithfiona.com/"},{"@type":"ListItem","position":2,"name":"JSON Formatter","item":"https://jimmywithfiona.com/json-formatter/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"JSON Formatter","url":"https://jimmywithfiona.com/json-formatter/","isPartOf":{"@type":"WebSite","name":"JSON Formatter","url":"https://jimmywithfiona.com/json-formatter/"}}
+</script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="brand" href="/json-formatter/">{} JSON Formatter</a>
+    <div class="nav-links">
+        <a href="/json-formatter/" class="active">Format</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+        <a href="/">🏠 Home</a>
+    </div>
+</nav>
+<main>
+<!-- AdSense Ad Unit -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1840337371416691" data-ad-slot="5549785669" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <h1>JSON Formatter & Validator {}</h1>
+    <p class="subtitle">Beautify, minify, validate, and explore JSON — syntax highlighting, tree view, error detection.</p>
+
+    <div class="toolbar">
+        <button class="btn btn-primary" onclick="formatJSON()">✨ Beautify</button>
+        <button class="btn btn-primary" onclick="minifyJSON()">📦 Minify</button>
+        <button class="btn" onclick="validateJSON()">✅ Validate</button>
+        <button class="btn" onclick="toggleTree()">🌳 Tree View</button>
+        <div class="btn-divider"></div>
+        <button class="btn" onclick="loadSample()">📄 Sample</button>
+        <button class="btn" onclick="clearAll()">🗑️ Clear</button>
+        <div class="btn-divider"></div>
+        <button class="btn btn-success" onclick="copyResult()">📋 Copy</button>
+        <button class="btn" onclick="downloadResult()">💾 Download</button>
+        <div class="btn-divider"></div>
+        <button class="btn" onclick="uploadFile()">📁 Upload</button>
+        <input type="file" id="fileInput" accept=".json,.txt" style="display:none">
+    </div>
+
+    <div class="status-bar">
+        <div class="status" id="statusArea">
+            <span class="info">Ready — paste or type JSON above</span>
+        </div>
+        <div class="info">
+            Size: <span id="sizeInfo">0</span> bytes · Lines: <span id="lineInfo">0</span> · Chars: <span id="charInfo">0</span>
+        </div>
+    </div>
+
+    <div class="path-display" id="pathDisplay">Root</div>
+
+    <div class="editor-grid">
+        <div class="editor-card">
+            <div class="editor-header">
+                <span class="label">📥 Input JSON</span>
+                <span class="stats">Type or paste JSON here</span>
+            </div>
+            <textarea class="editor-textarea" id="inputArea" placeholder='{"name":"JSON Formatter","version":"1.0","features":["beautify","minify","validate","tree"],"free":true}' spellcheck="false"></textarea>
+        </div>
+        <div class="editor-card">
+            <div class="editor-header">
+                <span class="label">📤 Formatted Output</span>
+                <span class="stats" id="outputStats"></span>
+            </div>
+            <div class="editor-output" id="outputArea" style="display:none;"></div>
+            <div class="tree-view" id="treeArea"></div>
+        </div>
+    </div>
+
+    <div class="stats-footer">👁️ Views <strong id="pv">-</strong><span class="stat-divider">|</span>👤 Visitors <strong id="uv">-</strong></div>
+
+    <div class="seo-section">
+        <h2>Free JSON Formatter and Validator</h2>
+        <p>Format, validate, and explore JSON data with our free online JSON formatter. Paste your JSON, click Beautify for readable indentation, Minify for compact output, or Validate to check for errors. The tool features syntax highlighting, an interactive tree view, real-time error detection with line numbers, and one-click copy. No signup, no upload — all processing happens in your browser.</p>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Beautify</strong> — Add proper indentation and line breaks for readability</li>
+            <li><strong>Minify</strong> — Remove whitespace to minimize file size</li>
+            <li><strong>Validate</strong> — Check JSON syntax with detailed error messages and line/column numbers</li>
+            <li><strong>Tree View</strong> — Interactive collapsible tree to explore nested JSON structures</li>
+            <li><strong>Syntax Highlighting</strong> — Color-coded keys, strings, numbers, booleans, and null</li>
+            <li><strong>Path Tracking</strong> — Click any tree node to see its JSON path</li>
+            <li><strong>Copy & Download</strong> — One-click copy to clipboard or download as .json file</li>
+            <li><strong>File Upload</strong> — Load .json files directly</li>
+            <li><strong>100% Private</strong> — All processing happens locally in your browser</li>
+        </ul>
+        <h2>What is JSON?</h2>
+        <p>JSON (JavaScript Object Notation) is a lightweight data interchange format that's easy for humans to read and write, and easy for machines to parse and generate. It's the standard format for APIs, configuration files, and data storage in modern web applications. JSON supports six data types: strings, numbers, booleans, null, objects (key-value pairs), and arrays (ordered lists).</p>
+        <h2>Common Use Cases</h2>
+        <ul>
+            <li><strong>API debugging</strong> — Format API responses for readability</li>
+            <li><strong>Configuration files</strong> — Validate and beautify config.json, package.json, etc.</li>
+            <li><strong>Data exploration</strong> — Use tree view to navigate complex nested structures</li>
+            <li><strong>Error fixing</strong> — Identify syntax errors with exact line and column numbers</li>
+            <li><strong>Minification</strong> — Reduce JSON file size for faster network transfer</li>
+            <li><strong>Learning</strong> — Understand JSON structure with syntax highlighting and tree view</li>
+        </ul>
+        <h2>JSON Syntax Quick Reference</h2>
+        <ul>
+            <li><strong>Objects:</strong> <code>{"key": "value"}</code> — unordered key-value pairs</li>
+            <li><strong>Arrays:</strong> <code>[1, 2, 3]</code> — ordered lists</li>
+            <li><strong>Strings:</strong> <code>"hello"</code> — double-quoted UTF-8 text</li>
+            <li><strong>Numbers:</strong> <code>42</code> or <code>3.14</code> — integers or floats</li>
+            <li><strong>Booleans:</strong> <code>true</code> or <code>false</code></li>
+            <li><strong>Null:</strong> <code>null</code> — represents no value</li>
+        </ul>
+        <h2>Privacy</h2>
+        <p>Your JSON data is 100% private. All formatting, validation, and parsing happens locally in your browser using JavaScript. No data is ever sent to any server.</p>
+        <h2>Frequently Asked Questions</h2>
+        <p><strong>What is JSON formatting?</strong> — Adding indentation and line breaks to make JSON readable.</p>
+        <p><strong>Is it free?</strong> — Yes, completely free with no limits.</p>
+        <p><strong>Can it validate?</strong> — Yes, with detailed error locations.</p>
+        <p><strong>Is data private?</strong> — Yes, all processing is local.</p>
+    </div>
+</main>
+<footer>
+    <p><a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="/">Home</a></p>
+    <p style="margin-top:0.4rem;">JSON Formatter © 2026 · Free online JSON tool</p>
+    <div style="margin-top:0.6rem;font-size:0.72rem;opacity:0.6;">More: <a href="/text-to-speech/">Text to Speech</a> · <a href="/password-generator/">Password Generator</a> · <a href="/word-counter/">Word Counter</a></div>
+</footer>
+<script src="js/counter.js" defer></script>
+<script>
+const inputArea = document.getElementById("inputArea");
+const outputArea = document.getElementById("outputArea");
+const treeArea = document.getElementById("treeArea");
+const statusArea = document.getElementById("statusArea");
+
+// Auto-update stats on input
+inputArea.addEventListener("input", updateStats);
+
+function updateStats() {
+    const text = inputArea.value;
+    document.getElementById("sizeInfo").textContent = new Blob([text]).size.toLocaleString();
+    document.getElementById("charInfo").textContent = text.length.toLocaleString();
+    document.getElementById("lineInfo").textContent = text ? text.split("\n").length : 0;
+}
+
+function setStatus(msg, type) {
+    const colors = { valid: "valid", invalid: "invalid", info: "info" };
+    statusArea.innerHTML = `<span class="${colors[type] || "info"}">${msg}</span>`;
+}
+
+function formatJSON() {
+    const text = inputArea.value.trim();
+    if (!text) { setStatus("⚠️ No input", "info"); return; }
+    try {
+        const parsed = JSON.parse(text);
+        const formatted = JSON.stringify(parsed, null, 2);
+        showOutput(syntaxHighlight(formatted));
+        document.getElementById("outputStats").textContent = formatted.length.toLocaleString() + " chars";
+        setStatus("✅ Valid JSON — beautified (" + countKeys(parsed) + " keys)", "valid");
+    } catch (e) {
+        showParseError(e, text);
+    }
+    updateStats();
+}
+
+function minifyJSON() {
+    const text = inputArea.value.trim();
+    if (!text) { setStatus("⚠️ No input", "info"); return; }
+    try {
+        const parsed = JSON.parse(text);
+        const minified = JSON.stringify(parsed);
+        showOutput(syntaxHighlight(minified));
+        document.getElementById("outputStats").textContent = minified.length.toLocaleString() + " chars";
+        const saved = text.length - minified.length;
+        const pct = text.length > 0 ? Math.round((saved / text.length) * 100) : 0;
+        setStatus("✅ Minified — saved " + saved.toLocaleString() + " bytes (" + pct + "%)", "valid");
+    } catch (e) {
+        showParseError(e, text);
+    }
+    updateStats();
+}
+
+function validateJSON() {
+    const text = inputArea.value.trim();
+    if (!text) { setStatus("⚠️ No input", "info"); return; }
+    try {
+        const parsed = JSON.parse(text);
+        const keys = countKeys(parsed);
+        const type = Array.isArray(parsed) ? "array" : typeof parsed;
+        const items = Array.isArray(parsed) ? parsed.length + " elements" : keys + " keys";
+        setStatus("✅ Valid JSON — " + type + ", " + items, "valid");
+        showOutput(syntaxHighlight(JSON.stringify(parsed, null, 2)));
+    } catch (e) {
+        showParseError(e, text);
+    }
+    updateStats();
+}
+
+function showParseError(e, text) {
+    // Extract line/column from error message
+    const match = e.message.match(/position (\d+)/i);
+    let errorPos = match ? parseInt(match[1]) : -1;
+    let line = 1, col = 1;
+
+    if (errorPos >= 0) {
+        const before = text.substring(0, errorPos);
+        line = before.split("\n").length;
+        col = errorPos - before.lastIndexOf("\n");
+    }
+
+    setStatus("❌ Invalid JSON — " + e.message + (errorPos >= 0 ? " (Line " + line + ", Col " + col + ")" : ""), "invalid");
+    outputArea.style.display = "block";
+    treeArea.classList.remove("show");
+    outputArea.innerHTML = '<span style="color:var(--red);">Error at Line ' + line + ', Column ' + col + ':\n' + escapeHtml(e.message) + '</span>';
+}
+
+function countKeys(obj) {
+    let count = 0;
+    function recurse(o) {
+        if (typeof o === "object" && o !== null) {
+            if (Array.isArray(o)) {
+                o.forEach(recurse);
+            } else {
+                Object.keys(o).forEach(k => { count++; recurse(o[k]); });
+            }
+        }
+    }
+    recurse(obj);
+    return count;
+}
+
+function syntaxHighlight(json) {
+    json = json.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+\.?\d*([eE][+\-]?\d+)?)/g, function(match) {
+        let cls = "tree-number";
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) cls = "tree-key";
+            else cls = "tree-string";
+        } else if (/true|false/.test(match)) cls = "tree-bool";
+        else if (/null/.test(match)) cls = "tree-null";
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
+
+function showOutput(html) {
+    outputArea.style.display = "block";
+    treeArea.classList.remove("show");
+    outputArea.innerHTML = html;
+}
+
+function toggleTree() {
+    const text = inputArea.value.trim();
+    if (!text) { setStatus("⚠️ No input", "info"); return; }
+    try {
+        const parsed = JSON.parse(text);
+        outputArea.style.display = "none";
+        treeArea.classList.add("show");
+        treeArea.innerHTML = "";
+        buildTree(parsed, "", treeArea);
+        setStatus("🌳 Tree view — click nodes to expand/collapse", "valid");
+    } catch (e) {
+        showParseError(e, text);
+    }
+}
+
+function buildTree(data, path, container) {
+    const item = document.createElement("div");
+    item.className = "tree-item";
+
+    if (typeof data === "object" && data !== null) {
+        const isArray = Array.isArray(data);
+        const keys = isArray ? data.length : Object.keys(data).length;
+        const toggle = document.createElement("span");
+        toggle.className = "tree-toggle";
+        toggle.textContent = "▼ ";
+        item.appendChild(toggle);
+
+        const label = document.createElement("span");
+        label.innerHTML = isArray
+            ? '<span class="tree-key">Array</span> [' + keys + ']'
+            : '<span class="tree-key">Object</span> {' + keys + '}';
+        item.appendChild(label);
+
+        const children = document.createElement("div");
+        children.className = "tree-children";
+
+        if (isArray) {
+            data.forEach((v, i) => {
+                const child = document.createElement("div");
+                child.className = "tree-item";
+                const childPath = path + "[" + i + "]";
+                child.style.cursor = "pointer";
+                child.innerHTML = '<span class="tree-key">' + i + '</span>: ';
+                child.onclick = (e) => { e.stopPropagation(); updatePath(childPath); };
+                const valSpan = document.createElement("span");
+                valSpan.style.display = "inline";
+                child.appendChild(valSpan);
+                if (typeof v === "object" && v !== null) {
+                    buildTree(v, childPath, child);
+                } else {
+                    valSpan.innerHTML = formatValue(v);
+                }
+                children.appendChild(child);
+            });
+        } else {
+            Object.keys(data).forEach(k => {
+                const childPath = path ? path + "." + k : k;
+                const child = document.createElement("div");
+                child.className = "tree-item";
+                child.style.cursor = "pointer";
+                child.innerHTML = '<span class="tree-key">"' + k + '"</span>: ';
+                child.onclick = (e) => { e.stopPropagation(); updatePath(childPath); };
+                const valSpan = document.createElement("span");
+                valSpan.style.display = "inline";
+                child.appendChild(valSpan);
+                if (typeof data[k] === "object" && data[k] !== null) {
+                    buildTree(data[k], childPath, child);
+                } else {
+                    valSpan.innerHTML = formatValue(data[k]);
+                }
+                children.appendChild(child);
+            });
+        }
+
+        item.appendChild(children);
+        toggle.onclick = (e) => {
+            e.stopPropagation();
+            if (children.style.display === "none") {
+                children.style.display = "block";
+                toggle.textContent = "▼ ";
+            } else {
+                children.style.display = "none";
+                toggle.textContent = "▶ ";
+            }
+        };
+    } else {
+        item.innerHTML = formatValue(data);
+    }
+    container.appendChild(item);
+}
+
+function formatValue(v) {
+    if (v === null) return '<span class="tree-null">null</span>';
+    if (typeof v === "string") return '<span class="tree-string">"' + escapeHtml(v) + '"</span>';
+    if (typeof v === "number") return '<span class="tree-number">' + v + '</span>';
+    if (typeof v === "boolean") return '<span class="tree-bool">' + v + '</span>';
+    return escapeHtml(String(v));
+}
+
+function updatePath(path) {
+    document.getElementById("pathDisplay").innerHTML = path
+        ? 'Root → <span class="key">' + path + "</span>"
+        : "Root";
+}
+
+function escapeHtml(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function loadSample() {
+    inputArea.value = JSON.stringify({
+        name: "JSON Formatter",
+        version: "1.0.0",
+        description: "A free online JSON formatting tool",
+        features: ["beautify", "minify", "validate", "tree view", "syntax highlight"],
+        stats: { users: 150000, rating: 4.8, free: true },
+        nested: { level1: { level2: { level3: "deep value" } } },
+        nullValue: null,
+        isActive: true
+    }, null, 2);
+    formatJSON();
+    updateStats();
+}
+
+function clearAll() {
+    inputArea.value = "";
+    outputArea.style.display = "none";
+    outputArea.innerHTML = "";
+    treeArea.classList.remove("show");
+    treeArea.innerHTML = "";
+    setStatus("Ready — paste or type JSON above", "info");
+    document.getElementById("outputStats").textContent = "";
+    document.getElementById("pathDisplay").textContent = "Root";
+    updateStats();
+}
+
+function copyResult() {
+    const text = outputArea.style.display !== "none"
+        ? outputArea.textContent
+        : (treeArea.classList.contains("show") ? JSON.stringify(JSON.parse(inputArea.value), null, 2) : "");
+    if (!text) { setStatus("⚠️ Nothing to copy", "info"); return; }
+    navigator.clipboard.writeText(text).then(() => {
+        setStatus("📋 Copied to clipboard!", "valid");
+    }).catch(() => { setStatus("❌ Copy failed", "invalid"); });
+}
+
+function downloadResult() {
+    const text = outputArea.style.display !== "none"
+        ? outputArea.textContent
+        : (treeArea.classList.contains("show") ? JSON.stringify(JSON.parse(inputArea.value), null, 2) : inputArea.value);
+    if (!text.trim()) { setStatus("⚠️ Nothing to download", "info"); return; }
+    const blob = new Blob([text], { type: "application/json" });
+    const link = document.createElement("a");
+    link.download = "formatted.json";
+    link.href = URL.createObjectURL(blob);
+    link.click();
+    setStatus("💾 Downloaded as formatted.json", "valid");
+}
+
+function uploadFile() {
+    document.getElementById("fileInput").click();
+}
+
+document.getElementById("fileInput").addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+        inputArea.value = ev.target.result;
+        formatJSON();
+        updateStats();
+    };
+    reader.readAsText(file);
+});
+
+// Keyboard shortcut: Ctrl+Enter to format
+inputArea.addEventListener("keydown", e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+        e.preventDefault();
+        formatJSON();
+    }
+});
+
+// Initial format
+formatJSON();
+updateStats();
+</script>
+</body>
+</html>
