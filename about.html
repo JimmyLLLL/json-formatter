@@ -28,5 +28,35 @@
 </main>
 <footer><p>© 2026 JSON Formatter · <a href="/">Home</a></p></footer>
 <script src="js/counter.js" defer></script>
+<!-- I18N-FULL -->
+<script>
+(function(){
+var lang=(navigator.language||navigator.userLanguage||'en').toLowerCase();
+if(!lang.startsWith('zh'))return;
+var ZH={"{} JSON Formatter":"{} JSON 格式化工具","Format":"格式化","About":"关于","Privacy":"隐私","Contact":"联系","🏠 Home":"🏠 首页","About JSON Formatter":"关于 JSON 格式化工具","Free JSON formatter and validator — beautify, minify, validate, and explore JSON with syntax highlighting and tree view. All processing happens in your browser — no signup, no upload.":"免费的 JSON 格式化和验证工具 — 美化、压缩、验证并探索 JSON，支持语法高亮和树形视图。所有处理都在你的浏览器中完成 — 无需注册、无需上传。","Features":"功能特性","Beautify & Minify JSON":"美化和压缩 JSON","Validate with error line/column":"验证并显示错误行/列","Interactive tree view":"交互式树形视图","Syntax highlighting":"语法高亮","Copy & download":"复制和下载","File upload":"文件上传","100% client-side":"100% 客户端","Format JSON →":"格式化 JSON →","👁️ Views":"👁️ 浏览量","👤 Visitors":"👤 访客","© 2026 JSON Formatter ·":"© 2026 JSON 格式化工具 ·","Home":"首页"};
+function walk(node){
+if(node.nodeType===3){
+var t=node.textContent,k=t.trim();
+if(k&&ZH[k]){node.textContent=t.replace(k,ZH[k])}
+}else if(node.nodeType===1&&node.tagName!=='SCRIPT'&&node.tagName!=='STYLE'&&node.tagName!=='NOSCRIPT'){
+if(node.childNodes.length>1){
+var full=node.textContent.trim();
+if(ZH[full]){node.textContent=ZH[full];return}
+}
+for(var i=0;i<node.childNodes.length;i++){walk(node.childNodes[i])}
+}
+}
+walk(document.body);
+document.documentElement.lang='zh-CN';
+var mo=new MutationObserver(function(muts){
+muts.forEach(function(m){
+if(m.type==='childList'){m.addedNodes.forEach(function(n){walk(n)})}
+else if(m.type==='characterData'){walk(m.target)}
+});
+});
+mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+})();
+</script>
+<!-- /I18N-FULL -->
 </body>
 </html>
